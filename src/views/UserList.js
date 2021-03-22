@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
-import { View, Text, FlatList } from 'react-native'
+import { View, Text, FlatList, Alert } from 'react-native'
 import { ListItem, Avatar, Button, Icon } from 'react-native-elements'
-import { Alert } from 'react-native'
+
 // import users from '../data/users' //com o const { state } eu nao preciso importar o modulo users diretamente
 import UsersContext from '../context/UsersContext'
 
@@ -9,9 +9,7 @@ import UsersContext from '../context/UsersContext'
 export default props => {
     //console.warn(Object.keys(props)) //para saber o que foi passado para o props
 
-    const { state, dispatch } = useContext(UsersContext)
-    
-
+    const { state, dispatch } = useContext(UsersContext)   
 
     function confirmUserDeletion(user) {
         Alert.alert('Excluir Usuário', 'Deseja realmente excluir o usuário?', [
@@ -48,7 +46,7 @@ export default props => {
                         onPress={() => props.navigation.navigate('UserForm', user)} />
                     <Button type="clear"
                         icon={<Icon name="delete" size={25} color="red" />}
-                        onPress={() => confirmUserDeletion()} />
+                        onPress={() => confirmUserDeletion(user)} />
                 </ListItem.Content>
             </ListItem>
         )
