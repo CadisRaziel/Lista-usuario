@@ -6,7 +6,7 @@ import UserForm from './views/UserForm'
 import { Button, Icon, Avatar } from 'react-native-elements'
 import { UsersProvider } from './context/UsersContext'
 
-
+//Projeto muito bom para criar uma loja virtual por exemplo !!
 
 
 const Stack = createStackNavigator()
